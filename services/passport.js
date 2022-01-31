@@ -11,15 +11,19 @@ passport.serializeUser((user, done) => {
 })
 
 passport.deserializeUser((id, done) => { 
-    User.findById(id, function(err, user) {
-        done(err, user);
-      });
+    User.findById(id)
+        .then(user =>{
+            done(null, user)
+        }).catch((error) => {
+           console.log(error);
+        });
   });
 
 passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
     callbackURL: 'https://agile-harbor-09766.herokuapp.com/auth/google/callback',
+    proxy:true
     
 }, async (accessToken, refreshToken, profile, done) => {
 
@@ -27,7 +31,6 @@ passport.use(new GoogleStrategy({
     const user =  await User.findOne({ googleId: profile.id })
     if(user){
         //here deal with a user
-        
         done(null, user)
     }
     else{
@@ -59,8 +62,8 @@ passport.use(new LocalStrategy({
     failWithError: true
     },
     
-    function(email, password, done) {
-      User.findOne({ email: email }, async function (err, user) {
+    async function(email, password, done) {
+      await User.findOne({ email: email }, function (err, user) {
         if (err) { 
              return done(err); 
         }
