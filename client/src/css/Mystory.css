@@ -1,0 +1,154 @@
+.mainCover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    
+}
+.mainCover h1{
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+.container_main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 80%;
+   
+}
+.container_main .container_child{
+    color: #222;
+    background-color: #fff;
+    width:30%;
+    height:30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+.container_main .container_child .close_button{
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    margin: .3rem .3rem 0rem 0rem;
+    
+}
+.container_main .container_child .close_button span{
+    font-size: 1.5rem;
+   
+}
+
+.container_main .container_child a{
+    color: #222;
+   
+}
+.container_main .container_child button{
+    color: #222;
+    background-color: unset;
+    border: unset;
+    font-size: 1.5rem;
+   
+}
+.container_main .container_child button:hover{
+    color: gray;
+   
+}
+.container_main .container_child a:hover{
+    color: gray;
+   
+}
+
+.container_main .container_child img{
+    display: block;
+    width: 250px;
+    height: 200px;
+   
+}
+.container_main .container_child h1{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 100%;
+    text-align: center;
+    margin-top: .5rem;
+   
+   
+   
+}
+.container_main .container_child p{
+    text-transform:capitalize;
+    font-size: 0.7rem;
+    text-align: center;
+   
+   
+}
+.container_main .container_child .buttons{
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin: .4rem 0rem;
+
+}
+.container_main .container_child .buttons span{
+    font-size: 1.1rem;
+   
+}
+@media (max-width: 1200px) {
+    .container_main {
+        justify-content: center;
+        flex-direction: column;
+        width: 80%;
+        flex-wrap: unset;
+        
+       
+    }
+    .container_main .container_child{
+        width:80%;
+        margin: 1rem;
+
+    }
+    .container_main .container_child img{
+        width: 80%;
+        height: 200px;
+       
+    }
+    .container_main .container_child .buttons{
+        width: 80%;
+        font-size: .5rem;
+
+    }
+   
+}
+
+@media (max-width: 400px) {
+
+    .container_main {
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        flex-wrap: unset;
+       
+    }
+    .container_main .container_child{
+        width:80%;
+        margin:2rem;
+
+    }
+    .container_main .container_child img{
+        width: 80%;
+        height: 200px;
+       
+    }
+    .container_main .container_child .buttons{
+        width: 80%;
+        font-size: .3rem;
+
+    }
+
+}

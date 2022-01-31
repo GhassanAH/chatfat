@@ -1,0 +1,18 @@
+/* button:focus,
+button:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    box-sizing: unset;
+}
+.navbar-toggler:focus
+{
+         outline: none !important;
+         box-shadow: none;
+} */
+
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
