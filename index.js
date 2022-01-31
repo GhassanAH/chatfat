@@ -81,7 +81,7 @@ require('./routes/authRoutes')(app)
 require('./routes/profileRoute')(app)
 require('./routes/storyRoutes')(app)
 
-if(process.env.NODE_ENV === "Production"){
+if(process.env.NODE_ENV === "production"){
   app.disable('x-powered-by')
   const path = require('path')
 
