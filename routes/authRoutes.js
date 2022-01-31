@@ -17,7 +17,12 @@ module.exports = (app) => {
     app.get('/auth/google/callback', 
     passport.authenticate('google'), 
     (req,res) => {
-      res.redirect('/home')
+      if(process.env.NODE_ENV === "production"){
+        res.redirect('/home')
+      }else{
+        res.redirect('http://localhost:3000/home')
+      }
+        
         
     }
     )
