@@ -28,7 +28,8 @@ require('./model/Blog')
 
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongURI,{
-  
+  useNewUrlParser: true, 
+  useUnifiedTopology: true
 })
 app.use(cors());
 app.set('trust proxy', 1);
