@@ -15,15 +15,13 @@ module.exports = (app) => {
     }))
 
     app.get('/auth/google/callback', 
-    passport.authenticate('google'), 
-    (req,res) => {
-      if(process.env.NODE_ENV === "production"){
-        res.redirect('/home')
-      }else{
-        res.redirect('http://localhost:3000/home')
-      }
-        
-        
+            passport.authenticate('google'), 
+            (req,res) => {
+            if(process.env.NODE_ENV === "production"){
+                return res.redirect('/home')
+            }else{
+                return res.redirect('http://localhost:3000/home')
+            }    
     }
     )
 
