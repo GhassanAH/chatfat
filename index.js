@@ -14,7 +14,6 @@ require('./model/Blog')
 
 mongoose.connect(keys.mongURI,{
   useNewUrlParser: true,
-  useCreateIndex: true,
   useUnifiedTopology: true,
 })
 
